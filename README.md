@@ -43,7 +43,3 @@ The notebook calls `pd.read_csv("data/nobel.csv")`, so you need `workspace/data/
 ## Data
 
 The laureates CSV is described in the notebook as coming from the [Nobel Prize API](https://www.nobelprize.org/about/developer-zone-2/) (Nobel Foundation dataset). Treat the file as third-party data and respect the Nobel Foundation’s terms for reuse.
-
-## License
-
-Add a `LICENSE` file at the repository root if you want to specify how others may use your code and notes.
