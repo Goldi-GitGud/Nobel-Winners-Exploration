@@ -1,19 +1,11 @@
 # Nobel Prize winners — exploratory analysis
 
-A short Jupyter notebook project that loads Nobel Prize winner data and explores gender, birth country, decades, the first female laureate, and repeat winners.
+A small Jupyter project on Nobel laureate data: dominant gender and birth country, US-born share by decade, female representation, the first female laureate, and repeat winners.
 
 ## Requirements
 
-- Python 3.9 or newer
-- [Jupyter](https://jupyter.org/) or [VS Code](https://code.visualstudio.com/) with the Jupyter extension
-
-Packages used in the notebook:
-
-- `pandas`
-- `numpy`
-- `seaborn`
-
-Install (use a virtual environment if you prefer):
+- Python 3.9+
+- Jupyter or VS Code with the Jupyter extension
 
 ```bash
 pip install pandas numpy seaborn jupyter
@@ -21,25 +13,30 @@ pip install pandas numpy seaborn jupyter
 
 ## How to run
 
-1. Clone or download this repository.
-2. The notebook reads **`data/nobel.csv`** relative to the notebook folder. Create `workspace/data/` and place `nobel.csv` there (you can copy the `workspace/nobel.csv` file from this repo into `workspace/data/nobel.csv`).
-3. Open `workspace/notebook.ipynb` in Jupyter or VS Code and run all cells.
+1. Clone or download the repo.
+2. Open `workspace/notebook.ipynb` and run all cells. The notebook expects `nobel.csv` and optional `Nobel_Prize.png` in the same `workspace/` folder.
 
-If `workspace/Nobel_Prize.png` is missing, any intro cell that references it may show a broken image until you add the file or update the markdown path.
-
-## Project layout
+## Layout
 
 ```
 Nobel-Winners-Exploration/
 ├── README.md
 └── workspace/
     ├── notebook.ipynb
-    ├── nobel.csv          # copy into data/nobel.csv before running (see How to run)
-    └── Nobel_Prize.png    # optional asset for the intro
+    ├── nobel.csv
+    └── Nobel_Prize.png   # optional intro image
 ```
-
-The notebook calls `pd.read_csv("data/nobel.csv")`, so you need `workspace/data/nobel.csv` (create the `data` folder if it is not there yet).
 
 ## Data
 
-The laureates CSV is described in the notebook as coming from the [Nobel Prize API](https://www.nobelprize.org/about/developer-zone-2/) (Nobel Foundation dataset). Treat the file as third-party data and respect the Nobel Foundation’s terms for reuse.
+Laureates CSV is attributed in the notebook to the [Nobel Prize API](https://www.nobelprize.org/about/developer-zone-2/). Treat it as third-party data and follow the Nobel Foundation’s terms for reuse.
+
+## What you get from this exploration
+
+Working through this dataset reinforces a few practical skills:
+
+- **Exploratory workflow** — load a real table with `pandas`, inspect distributions with `value_counts`, and derive decade-level aggregates from a year column.
+- **Framing questions as code** — turn prompts (“which country dominates?”, “when was the US share highest?”, “who won more than once?”) into filters, ratios, and sorted subsets.
+- **Reading results in context** — raw counts show historical imbalance (e.g. gender); decade slices show how geography and representation shift over time; repeat winners highlight individuals and institutions that appear multiple times in the record.
+
+Together, that is a compact template for any similar CSV: define columns, group or filter, then interpret—not just print—what the numbers imply about the domain.
